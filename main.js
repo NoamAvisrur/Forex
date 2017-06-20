@@ -38,15 +38,15 @@ function setForex(e){
 
 function GetValues(){
     if(currencies.first == "USD"){
-        $.get( "http://forex.1forge.com/1.0.1/quotes?pairs=" + currencies.first + "EUR," + currencies.second +"USD," + currencies.third + "USD", setCurrentValues);   
+        $.get( "https://forex.1forge.com/1.0.1/quotes?pairs=" + currencies.first + "EUR," + currencies.second +"USD," + currencies.third + "USD", setCurrentValues);   
     }else{
         if(currencies.second == "USD"){
-            $.get( "http://forex.1forge.com/1.0.1/quotes?pairs=" + currencies.first + "USD," + currencies.second +"EUR," + currencies.third + "USD", setCurrentValues);   
+            $.get( "https://forex.1forge.com/1.0.1/quotes?pairs=" + currencies.first + "USD," + currencies.second +"EUR," + currencies.third + "USD", setCurrentValues);   
         }else{
             if(currencies.third == "USD"){
-               $.get( "http://forex.1forge.com/1.0.1/quotes?pairs=" + currencies.first + "USD," + currencies.second +"USD," + currencies.third + "EUR", setCurrentValues);   
+               $.get( "https://forex.1forge.com/1.0.1/quotes?pairs=" + currencies.first + "USD," + currencies.second +"USD," + currencies.third + "EUR", setCurrentValues);   
             }else{
-                    $.get( "http://forex.1forge.com/1.0.1/quotes?pairs=" + currencies.first + "USD," + currencies.second +"USD," + currencies.third + "USD", setCurrentValues);   
+                    $.get( "https://forex.1forge.com/1.0.1/quotes?pairs=" + currencies.first + "USD," + currencies.second +"USD," + currencies.third + "USD", setCurrentValues);   
             }   
         }
     }
