@@ -1,0 +1,227 @@
+body{
+    margin: 0px;
+    font-family: arial;
+}
+main{
+    display: flex;
+    justify-content: center;
+}
+header{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+header h1 {
+    background-color: #3498db;
+    box-shadow: 2px 2px 4px;
+    padding: 1rem;
+}
+header button{
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: tomato;
+    color: #ccc; 
+}
+
+.undisplay{
+     display: none;
+}
+
+.msg {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+header button:hover{
+    cursor: pointer;
+    color: #fff;
+}
+.entry{
+    margin-top: 2rem;
+}
+.entry h2{
+    text-align: center;
+}
+.entry form{
+    border: 1px solid #555;
+    box-shadow: 2px 2px 4px;
+    background-color: #f9f0e3;
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+}
+.entry select{
+    width: 25%;
+    height: 30px;
+    text-align-last: center;
+}
+.entry form input{
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: tomato;
+    color: #ccc; 
+    margin: 2rem;
+}
+
+.entry form input:hover{
+    color: #fff;
+    cursor: pointer;
+}
+section{
+    width: 25%;
+    height: 300px;
+    border: 1px solid #555;
+    margin: 1rem;
+    position: relative;
+    box-shadow: 2px 2px 4px;
+    background-color: #f9f0e3;
+}
+h3{
+    margin: 0px;
+    border-bottom: 1px solid #bbb;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+section h3 img{
+    width: 20px;
+}
+.titles, .price, .time, .symbol{
+    display: flex;
+    margin: 10px;
+    padding: 10px;  
+}
+.titles{
+    border-bottom: 2px solid #aaa;    
+}
+.price, .time, .symbol{
+    border-bottom: 1px solid #aaa;
+}
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+.id_title{
+    width: 15%;
+}
+.des_title{
+    width: 40%;
+}
+.val_title{
+    width: 40%;
+    animation: fadein 3s; 
+    font-weight: bold;
+}
+
+.converter_container form{
+    width: 25%;
+    border: 1px solid #555;
+    margin: 0 auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 2px 2px 4px;
+    background-color: #f9f0e3;
+    height: 300px;
+    animation: fadein 3s; 
+}
+
+.converter_container form > div{
+    display: flex;
+    justify-content: center;
+}
+.converter_container label{
+    width: 40%;
+    margin-top: 1rem;
+}
+
+.converter_container input[type="number"],.converter_container select{
+    height: 30px;
+    box-sizing: border-box; 
+    border-radius: 0px;
+    width: 100%;
+}
+
+.converter_container select{
+    border-left: none;
+}
+
+.converter_container input[type="submit"]{
+    margin: 0 auto;
+    margin-top: 1rem;
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: tomato;
+    height: 50px;
+    color: #ccc;
+    display: block;
+    cursor: pointer;
+}
+.converter_container input[type="submit"]:hover{
+    color: #fff;
+}
+.res{
+    margin-left: 10%;
+    margin-top: 1rem;
+}
+#result{
+    width: 80%;
+    height: 30px;
+    border: 1px solid #aaa;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+}
+.ribbon {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+}
+.ribbon::before,
+.ribbon::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  display: block;
+  border: 5px solid #2980b9;
+}
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 225px;
+  padding: 15px 0;
+  background-color: #3498db;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  color: #fff;
+  font: 700 18px/1 'Lato', sans-serif;
+  text-shadow: 0 1px 1px rgba(0,0,0,.2);
+  text-transform: uppercase;
+  text-align: center;
+}
+.ribbon-top-right {
+  top: -10px;
+  right: -10px;
+}
+.ribbon-top-right::before,
+.ribbon-top-right::after {
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+.ribbon-top-right::before {
+  top: 0;
+  left: 0;
+}
+.ribbon-top-right::after {
+  bottom: 0;
+  right: 0;
+}
+.ribbon-top-right span {
+  left: -25px;
+  top: 30px;
+  transform: rotate(45deg);
+}
