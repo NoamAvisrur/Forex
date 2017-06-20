@@ -1,6 +1,6 @@
 
 $('.entry form').submit(setForex);
-history.pushState('entry', 'forex', '/forex_convert/entry');
+//history.pushState('entry', 'forex', '/forex_convert/entry');
 
 var currencies = {
     first: "",
@@ -10,7 +10,7 @@ var currencies = {
 
 function setForex(e){
     e.preventDefault();
-    history.pushState('forex', 'forex', '/forex_convert/forex');
+    //history.pushState('forex', 'forex', '/forex_convert/forex');
     currencies.first = $('.first_cur').val();
     currencies.second = $('.second_cur').val();
     currencies.third = $('.third_cur').val();
