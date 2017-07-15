@@ -14,11 +14,11 @@ function setForex(e){
     currencies.third = $('.third_cur').val();
     if (currencies.first == currencies.second || currencies.first == currencies.third
         || currencies.second == currencies.third){
-        $('.msg').text('plase choose different currencies');
+        $('.msg').text('please choose different currencies');
         return;
     }
     $('.entry').remove();
-    $('#update_now, #convert_now').removeClass('undisplay');
+    $('#convert_now').removeClass('undisplay');
     var promise = new Promise(function (resolve, reject) {    
         $.get( "view/forex.html", function(data) {
             resolve(data);
@@ -27,11 +27,6 @@ function setForex(e){
            $('main').html(data);   
     }).then(function(){   
            GetValues();
-           setInterval(function(){
-               GetValues(); 
-               console.log('ok')
-           }, 10000
-           );
     });
 }
 
@@ -62,11 +57,6 @@ function setCurrentValues(data){
     $('#jpy_price_val').text(data[2].price);
     $('#jpy_symbol_val, .third_h3').text(data[2].symbol);  
 }
-
-$('#update_now').click(function(){
-    GetValues();  
-    console.log('up');
-})
 
 function getTimeFromTimestamp(timestamp){
     var time = new Date(timestamp);
