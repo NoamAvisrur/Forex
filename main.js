@@ -1,6 +1,5 @@
 
 $('.entry form').submit(setForex);
-//history.pushState('entry', 'forex', '/forex_convert/entry');
 
 var currencies = {
     first: "",
@@ -10,7 +9,6 @@ var currencies = {
 
 function setForex(e){
     e.preventDefault();
-    //history.pushState('forex', 'forex', '/forex_convert/forex');
     currencies.first = $('.first_cur').val();
     currencies.second = $('.second_cur').val();
     currencies.third = $('.third_cur').val();
@@ -31,6 +29,7 @@ function setForex(e){
            GetValues();
            setInterval(function(){
                GetValues(); 
+               console.log('ok')
            }, 10000
            );
     });
@@ -38,15 +37,15 @@ function setForex(e){
 
 function GetValues(){
     if(currencies.first == "USD"){
-        $.get( "https://forex.1forge.com/1.0.1/quotes?pairs=" + currencies.first + "EUR," + currencies.second +"USD," + currencies.third + "USD", setCurrentValues);   
+        $.get( "https://forex.1forge.com/1.0.2/quotes?pairs=" + currencies.first + "EUR," + currencies.second +"USD," + currencies.third + "USD&api_key=TpuXmI6AbAJSPoCQTCpfepcL7RapLn2N" , setCurrentValues);   
     }else{
         if(currencies.second == "USD"){
-            $.get( "https://forex.1forge.com/1.0.1/quotes?pairs=" + currencies.first + "USD," + currencies.second +"EUR," + currencies.third + "USD", setCurrentValues);   
+            $.get( "https://forex.1forge.com/1.0.2/quotes?pairs=" + currencies.first + "USD," + currencies.second +"EUR," + currencies.third + "USD&api_key=TpuXmI6AbAJSPoCQTCpfepcL7RapLn2N", setCurrentValues);   
         }else{
             if(currencies.third == "USD"){
-               $.get( "https://forex.1forge.com/1.0.1/quotes?pairs=" + currencies.first + "USD," + currencies.second +"USD," + currencies.third + "EUR", setCurrentValues);   
+               $.get( "https://forex.1forge.com/1.0.2/quotes?pairs=" + currencies.first + "USD," + currencies.second +"USD," + currencies.third + "EUR&api_key=TpuXmI6AbAJSPoCQTCpfepcL7RapLn2N", setCurrentValues);   
             }else{
-                    $.get( "https://forex.1forge.com/1.0.1/quotes?pairs=" + currencies.first + "USD," + currencies.second +"USD," + currencies.third + "USD", setCurrentValues);   
+                    $.get( "https://forex.1forge.com/1.0.2/quotes?pairs=" + currencies.first + "USD," + currencies.second +"USD," + currencies.third + "USD&api_key=TpuXmI6AbAJSPoCQTCpfepcL7RapLn2N", setCurrentValues);   
             }   
         }
     }
@@ -65,7 +64,8 @@ function setCurrentValues(data){
 }
 
 $('#update_now').click(function(){
-    GetValues();   
+    GetValues();  
+    console.log('up');
 })
 
 function getTimeFromTimestamp(timestamp){
@@ -97,21 +97,11 @@ function convert(e){
     var con = Forex.substring(0, 3);
     var to = Forex.substring(4,7);
     var quantity = $('input[type="number"]').val();
-    $.get( "https://forex.1forge.com/1.0.1/convert?from=" + con + "&to=" + to + "&quantity=" + quantity, function(result){
+    $.get( "https://forex.1forge.com/1.0.2/convert?from=" + con + "&to=" + to + "&quantity=" + quantity + "&api_key=TpuXmI6AbAJSPoCQTCpfepcL7RapLn2N", function(result){
          $('#result').text(result.value);
     });
 };
-
-window.onpopstate = function(e){
-    switch (e.state){
-        case 'entry':
-            console.log('entry');
-            break;
-        case 'forex': 
-            console.log('forex');
-            break;
-    }
-}    
+ 
 
 
 
